@@ -96,7 +96,6 @@ function Campeonato(artilheiro, gols, partidas){
 Campeonato(' O melhor do campeonato,', ' com 170 gols', ' em 100 partidas !' )
 
 
-
 function statusPedido(status, retorno){
     console.log('Transação ' + status + retorno)
 }
