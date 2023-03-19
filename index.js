@@ -26,6 +26,15 @@ console.log(irma);
 console.log(sobrinho);
 
 
-const price = 30;
+const price = 300;
 // price = 20;
 console.log (price);
+
+
+let ruivinha ='Katarininha';
+console.log(ruivinha);
+
+let calc = 300;
+
+console.log(calc);
+
