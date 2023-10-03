@@ -48,19 +48,17 @@ function ativaBrother(){
 
 addEventListener('click', ativaBrother);
 
-
 function terceiraIdade(idade){
- if(typeof idade !== 'number'){
-  return 'informe sua idade em números por favor'
- } else if (idade >= 60){
-  return 'parabéns você já é maior de 60 pode se aposentar...'
- } else{
-  return 'poxa, você ainda não pode dar entrada na sua aposentadoria...'  
- }
+  if (typeof idade !== 'number'){
+    return 'informe um número por favor!'
+  } else if (idade >= 60){
+    return 'você já pode dar entrada na sua previdencia'
+  } else {
+    return 'desculpe, você não tem idade para dar entrada na sua previdencia...'
+  }
 }
 
-console.log(terceiraIdade(61));
-
+console.log(terceiraIdade(67));
 
 function faltaVisitar(paisesVisitados){
   const totalPaises = 184;
