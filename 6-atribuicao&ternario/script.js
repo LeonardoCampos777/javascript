@@ -11,7 +11,6 @@ const podeBeber = (idade >= 18) ? "Pode beber" : "Não pode beber";
 console.log(podeBeber);
 
 const sabeNadar = true;
-
 const entrarPraia = (sabeNadar === true && idade >= 18) ? "Pode entrar na praia, você sabe nadar" : "Desculpe, você não sabe nadar";
 console.log(entrarPraia);
 
