@@ -1,15 +1,15 @@
 // Mostre no console cada parágrado do site
 const paragrafos = document.querySelectorAll('p');
 
-paragrafos.forEach(function(paragrafo){
-  //console.log(paragrafo);
+paragrafos.forEach((paragrafo) =>{
+  console.log(paragrafo);
 });
 
 // Mostre o texto dos parágrafos no console
 const textosParagrafos = document.querySelectorAll('p');
 
-textosParagrafos.forEach(function(paragrafo){
-  //console.log(paragrafo.innerText);
+textosParagrafos.forEach((paragrafo) =>{
+  console.log(paragrafo.innerText);
 });
 
 // Como corrigir os erros abaixo:
@@ -20,7 +20,7 @@ imgs.forEach((item, index) => {
 });
 
 let i = 0;
-imgs.forEach(() => {
+imgs.forEach(()=> {
   console.log(i++);
 });
 
