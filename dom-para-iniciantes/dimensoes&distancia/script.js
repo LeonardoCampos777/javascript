@@ -31,3 +31,11 @@ console.log(
 if(h2rect.top < 0){
   console.log("passou do elemento");
 }
+
+const small = window.matchMedia('(max-width:600px)').matches;
+
+if(small){
+  console.log('usuário mobile');
+} else{
+  console.log('usuário desktop');
+}
