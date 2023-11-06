@@ -6,10 +6,11 @@ const linksInternos = document.querySelectorAll('a[href^="#"]');
 
 function clickClasse(event){
   event.preventDefault();
+  event.currentTarget.classList.add('ativo');
+
   linksInternos.forEach((link)=>{
     link.classList.remove('ativo');
   });
-  event.currentTarget.classList.add('ativo');
 };
 
 linksInternos.forEach((link)=>{
@@ -37,10 +38,9 @@ function clickElemento(event){
 }
 
 // Se o usuário clicar na tecla (t), aumente todo o texto do site. 
-
 function callback(event){
   if(event.key === 't'){
-    document.documentElement.classList.toggle('textomaior');
+    document.documentElement.classList.toggle('textomaior'); //o "documentElement" significa o html a tradução é HTML, pegue o html
   }
 }
 
