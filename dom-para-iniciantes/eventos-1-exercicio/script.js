@@ -4,44 +4,45 @@
 // o comportamento padrão desses links
 const linksInternos = document.querySelectorAll('a[href^="#"]');
 
-function clickClasse(event){
+function addClass(event){
   event.preventDefault();
-  event.currentTarget.classList.add('ativo');
-
-  linksInternos.forEach((link)=>{
-    link.classList.remove('ativo');
+  linksInternos.forEach((item)=>{
+    item.classList.remove('ativo');
   });
+
+  event.currentTarget.classList.add('ativo');
 };
 
-linksInternos.forEach((link)=>{
-  link.addEventListener('click', clickClasse);
+linksInternos.forEach((item)=>{
+  item.addEventListener('click', addClass);
 });
 
 // Selecione todos os elementos do site começando a partir do body,
 // ao clique mostre exatamente quais elementos estão sendo clicados
-const todosElementos = document.querySelectorAll('body *');
+const elementos = document.querySelectorAll('body *');
 
-function clickElemento(event){
-  const ondeClicou = event.currentTarget;
-  console.log(ondeClicou);
-}
+function handleClick(event){
+  const elementoMarcado = event.currentTarget;
+  console.log(elementoMarcado);
+};
 
-todosElementos.forEach((elemento)=>{
-  elemento.addEventListener('click', clickElemento);
+elementos.forEach((elemento)=>{
+  elemento.addEventListener('click', handleClick);
 });
 
 // Utilizando o código anterior, ao invés de mostrar no console,
 // remova o elemento que está sendo clicado, o método remove() remove um elemento
-function clickElemento(event){
-  const ondeClicou = event.target.remove();
-  console.log(ondeClicou);
-}
+function handleClick(event){
+  const elementoMarcado = event.currentTarget.remove();
+  console.log(elementoMarcado);
+};
 
 // Se o usuário clicar na tecla (t), aumente todo o texto do site. 
-function callback(event){
+
+function handleTecla(event){
   if(event.key === 't'){
-    document.documentElement.classList.toggle('textomaior'); //o "documentElement" significa o html a tradução é HTML, pegue o html
+    document.documentElement.classList.toggle('textomaior');
   }
 }
 
-window.addEventListener('keydown', callback);
+window.addEventListener('keydown', handleTecla);
