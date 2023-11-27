@@ -248,8 +248,8 @@ body{
 
 .js .js-accordion dd {
   display: none;
-};
+}
 
 .js-accordion dd.ativo {
   display: block;
-};
+}
