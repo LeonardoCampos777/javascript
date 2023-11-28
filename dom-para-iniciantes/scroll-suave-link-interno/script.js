@@ -42,6 +42,23 @@ function initAccordion(){
 initAccordion();
 
 
+const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
+
+function scrollToSection(event){
+  event.preventDefault();
+  const href = event.currentTarget.getAttribute('href');
+  const section = document.querySelector(href);
+
+  section.scrollIntoView({
+    behavior: 'smooth', // suave
+    block: 'start', // começar no inicio da section o scroll
+  });
+};
+
+linksInternos.forEach((link) =>{
+  link.addEventListener('click', scrollToSection);
+});
+
 // UMA NAVEGAÇÃO POR TAB É UMA NAVEGAÇÃO RELACIONADA COM UMA LISTA DE ITENS  E OUTRA LISTA DE ITENS
 // E COM ISSO AO CLICAR EM UMA LISTA, VAI ATIVAR A OUTRA!!
 // UM ITEM DE CLICK PARA CADA ITEM DO CONTEUDO!
