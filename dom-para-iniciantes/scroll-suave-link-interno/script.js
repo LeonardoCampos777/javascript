@@ -21,44 +21,50 @@ function initTabNav() {
 }
 initTabNav();
 
-function initAccordion(){
+function initAccordion() {
   const accordionList = document.querySelectorAll(".js-accordion dt");
-  const activeClass = 'ativo';
-  
-  if(accordionList.length){
+  const activeClass = "ativo";
+
+  if (accordionList.length) {
     accordionList[0].classList.add(activeClass);
     accordionList[0].nextElementSibling.classList.add(activeClass);
-    
+
     function activeAccordion() {
       this.classList.toggle(activeClass);
       this.nextElementSibling.classList.toggle(activeClass);
     }
-    
+
     accordionList.forEach((item) => {
       item.addEventListener("click", activeAccordion);
     });
-  };  
+  }
 }
 initAccordion();
 
+//VAMOS FAZER AGORA UM SCROLL SUAVE USANDO O JAVASCRIPT.
+// USANDO O HREF COMO REFERÊNCIA PARA FAZER A RELAÇÃO ENRTRE O MENU E AS SECTIONS
 
-const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
+function initScrollSuave() {
+  const linksInternos = document.querySelectorAll('.js-menu a [href^="#"]');
 
-function scrollToSection(event){
-  event.preventDefault();
-  const href = event.currentTarget.getAttribute('href');
-  const section = document.querySelector(href);
-
-  section.scrollIntoView({
-    behavior: 'smooth', // suave
-    block: 'start', // começar no inicio da section o scroll
-  });
-};
-
-linksInternos.forEach((link) =>{
-  link.addEventListener('click', scrollToSection);
-});
-
+  if(linksInternos){
+    function scrollToSection(event) {
+      event.preventDefault();
+      const href = event.currentTarget.getAttribute("href");
+      const section = document.querySelector(href);
+  
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  
+    linksInternos.forEach((item) => {
+      item.addEventListener("click", scrollToSection);
+    });
+  }
+}
+initScrollSuave();
 // UMA NAVEGAÇÃO POR TAB É UMA NAVEGAÇÃO RELACIONADA COM UMA LISTA DE ITENS  E OUTRA LISTA DE ITENS
 // E COM ISSO AO CLICAR EM UMA LISTA, VAI ATIVAR A OUTRA!!
 // UM ITEM DE CLICK PARA CADA ITEM DO CONTEUDO!
