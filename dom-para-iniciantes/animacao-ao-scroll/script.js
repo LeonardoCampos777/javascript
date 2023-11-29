@@ -45,7 +45,7 @@ initAccordion();
 // USANDO O HREF COMO REFERÊNCIA PARA FAZER A RELAÇÃO ENRTRE O MENU E AS SECTIONS
 
 function initScrollSuave() {
-  const linksInternos = document.querySelectorAll('.js-menu a [href^="#"]');
+  const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
 
   if (linksInternos) {
     function scrollToSection(event) {
@@ -89,7 +89,7 @@ function initAnimacaoScroll() {
   const sections = document.querySelectorAll(".js-scroll");
 
   if (sections.length) {
-    const windowMetade = window.innerHeight * 0.6;
+    const windowMetade = window.innerHeight * 0.6; // aqui é a conta de 60% da tela
 
     function animaScroll() {
       sections.forEach((section) => {
@@ -107,4 +107,4 @@ function initAnimacaoScroll() {
     window.addEventListener("scroll", animaScroll);
   }
 }
-initAnimacaoScroll();
+initAnimacaoScroll(); 
